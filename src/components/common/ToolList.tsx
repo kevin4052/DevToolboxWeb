@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { StarIcon } from "@heroicons/react/24/outline";
 import { Separator } from "@/components/ui/separator";
 
 export type ToolOption = {
@@ -101,6 +101,18 @@ export default function ToolList() {
   const pathname = usePathname();
   return (
     <div className="bg-gray-700 flex shrink-0 flex-col">
+      <Separator className="my-2" />
+      <Link
+        className='w-full py-3 px-4 hover:bg-gray-600 hover:rounded-md'
+        href="https://github.com/YourAverageTechBro/DevToolboxWeb"
+        target="_blank"
+        >
+        <div className={"flex items-center gap-2"}>
+          <StarIcon className={"w-6 h-6"} />
+          Star Us On Github
+        </div>
+      </Link>
+      <Separator className="my-2" />
       {toolList
         .sort((a, b) => {
           if (a.name < b.name) return -1;
@@ -110,8 +122,8 @@ export default function ToolList() {
         .map((toolOption) => (
           <>
             <Link
-            className={`w-full py-3 px-4 hover:bg-gray-600 ${
-              pathname === toolOption.path && "bg-gray-500"
+            className={`w-full py-3 px-4 hover:bg-gray-600 hover:rounded-md ${
+              pathname === toolOption.path && "bg-gray-500 rounded-md"
               }`}
               key={toolOption.name}
               href={toolOption.path}
