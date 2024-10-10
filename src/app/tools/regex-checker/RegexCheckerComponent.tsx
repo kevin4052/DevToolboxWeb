@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ReadOnlyTextArea from "@/app/components/common/ReadOnlyTextArea";
+import ReadOnlyTextArea from "@/components/common/ReadOnlyTextArea";
 import { User } from "@clerk/backend";
 import useDebounce from "@/app/hooks/useDebounce";
 import { saveHistory } from "@/utils/clientUtils";

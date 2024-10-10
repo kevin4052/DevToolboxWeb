@@ -2,7 +2,7 @@
 
 import * as CryptoJS from "crypto-js";
 import { useEffect, useState } from "react";
-import TextArea from "@/app/components/common/TextArea";
+import TextArea from "@/components/common/TextArea";
 import { User } from "@clerk/backend";
 import useDebounce from "@/app/hooks/useDebounce";
 import { ToolType } from "@prisma/client";

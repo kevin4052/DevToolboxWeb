@@ -2,12 +2,12 @@
 
 import React, { useEffect } from "react";
 
-import TextArea from "@/app/components/common/TextArea";
+import TextArea from "@/components/common/TextArea";
 import { User } from "@clerk/backend";
 import useDebounce from "@/app/hooks/useDebounce";
 import { ToolType } from "@prisma/client";
 import { saveHistory } from "@/utils/clientUtils";
-import ReadOnlyTextArea from "@/app/components/common/ReadOnlyTextArea";
+import ReadOnlyTextArea from "@/components/common/ReadOnlyTextArea";
 
 export default function ClipFormatterComponent({
   user,

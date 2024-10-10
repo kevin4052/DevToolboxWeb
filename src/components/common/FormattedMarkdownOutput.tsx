@@ -1,7 +1,7 @@
 import { JSONPath } from "jsonpath-plus";
 import { ChangeEvent, useCallback, useEffect, useState } from "react";
 import useDebounce from "@/app/hooks/useDebounce";
-import Selector from "@/app/components/common/Selector";
+import Selector from "@/components/common/Selector";
 import { marked } from "marked";
 import * as DOMPurify from 'dompurify';
 import 'github-markdown-css';

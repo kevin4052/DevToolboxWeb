@@ -1,6 +1,6 @@
 import { JSONPath } from "jsonpath-plus";
 import { ChangeEvent, useEffect, useState } from "react";
-import Selector from "@/app/components/common/Selector";
+import Selector from "@/components/common/Selector";
 import dynamic from "next/dynamic";
 
 const ReactJson = dynamic(() => import("react-json-view"));

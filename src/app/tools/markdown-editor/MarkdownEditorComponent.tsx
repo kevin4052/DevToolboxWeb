@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import TextArea from "@/app/components/common/TextArea";
-import FormattedMarkdownOutput from "@/app/components/common/FormattedMarkdownOutput";
+import TextArea from "@/components/common/TextArea";
+import FormattedMarkdownOutput from "@/components/common/FormattedMarkdownOutput";
 import { User } from "@clerk/backend";
 import { saveHistory } from "@/utils/clientUtils";
 import { ToolType } from "@prisma/client";

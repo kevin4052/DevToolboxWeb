@@ -1,4 +1,5 @@
-import ToolList from "@/app/components/common/ToolList";
+import ToolList from "@/components/common/ToolList";
+import { SideNavBar } from "@/components/SideNavBar";
 
 export default function ToolsLayout({
   children,
@@ -7,14 +8,12 @@ export default function ToolsLayout({
 }) {
   return (
     <div className={"h-full w-full flex gap-4"}>
-      {" "}
-      <ToolList />
+      <SideNavBar />
       <div
-        className={"pt-4 px-4 flex-1 overflow-x-hidden"}
+        className={"pt-4 px-4 ml-12 flex-1 overflow-x-hidden"}
       >
         <div style={{height: "calc(100% - 2rem)"}}>
-          {" "}
-          {children}{" "}
+          {children}
         </div>
       </div>
     </div>

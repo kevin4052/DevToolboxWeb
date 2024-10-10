@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { InvalidTokenError, jwtDecode } from "jwt-decode";
-import FormattedJsonOutput from "@/app/components/common/FormatedJsonOutput";
-import TextArea from "@/app/components/common/TextArea";
-import ReadOnlyTextArea from "@/app/components/common/ReadOnlyTextArea";
+import FormattedJsonOutput from "@/components/common/FormatedJsonOutput";
+import TextArea from "@/components/common/TextArea";
+import ReadOnlyTextArea from "@/components/common/ReadOnlyTextArea";
 
 export default function JwtViewerComponent() {
   const [input, setInput] = useState("");

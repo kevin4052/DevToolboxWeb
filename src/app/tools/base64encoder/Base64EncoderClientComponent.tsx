@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Selector from "@/app/components/common/Selector";
-import ReadOnlyTextArea from "@/app/components/common/ReadOnlyTextArea";
+import Selector from "@/components/common/Selector";
+import ReadOnlyTextArea from "@/components/common/ReadOnlyTextArea";
 import { User } from "@clerk/backend";
 import useDebounce from "@/app/hooks/useDebounce";
 import { saveHistory } from "@/utils/clientUtils";

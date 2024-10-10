@@ -3,9 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { Button } from "@/app/components/common/Button";
-import { StarIcon } from "@heroicons/react/24/outline";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
 
 export type ToolOption = {
   name: string;
@@ -101,38 +100,7 @@ export const toolList: ToolOption[] = [
 export default function ToolList() {
   const pathname = usePathname();
   return (
-    <div className="w-72 bg-gray-700 flex shrink-0 flex-col overflow-y-scroll">
-      <SignedIn>
-        <div className={"px-2 my-4 flex justify-between w-full"}>
-          <UserButton afterSignOutUrl="/tools/json-validator" />
-          <Button intent={"secondary"} href={"/tools/history"}>
-            View History
-          </Button>
-        </div>
-      </SignedIn>
-      <SignedOut>
-        <div className={"mx-2 my-4 flex flex-col gap-4"}>
-          <Button fullWidth intent={"primary"} href={"/sign-in"}>
-            Log in / Sign-up
-          </Button>
-          <p className={"text-xs text-gray-200"}>
-            {" "}
-            You only have to create an account if you want to upgrade to
-            DevToolbox Pro which saves your history so you can keep track of all
-            the actions you have done.
-          </p>
-        </div>
-      </SignedOut>
-      <Link
-        className={`w-full border-y py-3 px-4 hover:bg-gray-600`}
-        href={`https://github.com/YourAverageTechBro/DevToolboxWeb`}
-        target="_blank"
-      >
-        <div className={"flex items-center gap-2 "}>
-          <StarIcon className={"w-6 h-6"} />
-          Star Us On Github
-        </div>
-      </Link>
+    <div className="bg-gray-700 flex shrink-0 flex-col">
       {toolList
         .sort((a, b) => {
           if (a.name < b.name) return -1;
@@ -140,15 +108,18 @@ export default function ToolList() {
           return 0;
         })
         .map((toolOption) => (
-          <Link
-            className={`w-full border-b py-3 px-4 hover:bg-gray-600 ${
+          <>
+            <Link
+            className={`w-full py-3 px-4 hover:bg-gray-600 ${
               pathname === toolOption.path && "bg-gray-500"
-            }`}
-            key={toolOption.name}
-            href={toolOption.path}
-          >
-            <p> {toolOption.name}</p>
-          </Link>
+              }`}
+              key={toolOption.name}
+              href={toolOption.path}
+              >
+              <p> {toolOption.name}</p>
+            </Link>
+            <Separator className="my-2" />
+          </>
         ))}
     </div>
   );

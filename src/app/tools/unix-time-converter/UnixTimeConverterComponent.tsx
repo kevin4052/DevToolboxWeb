@@ -1,6 +1,6 @@
 "use client";
 
-import Selector from "@/app/components/common/Selector";
+import Selector from "@/components/common/Selector";
 import { useCallback, useEffect, useState } from "react";
 import { User } from "@clerk/backend";
 import { saveHistory } from "@/utils/clientUtils";

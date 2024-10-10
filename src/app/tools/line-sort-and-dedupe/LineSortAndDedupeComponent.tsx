@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Selector from "@/app/components/common/Selector";
+import Selector from "@/components/common/Selector";
 import { User } from "@clerk/backend";
 import useDebounce from "@/app/hooks/useDebounce";
 import { saveHistory } from "@/utils/clientUtils";

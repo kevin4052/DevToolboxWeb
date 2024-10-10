@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import TextArea from "@/app/components/common/TextArea";
-import ReadOnlyTextArea from "@/app/components/common/ReadOnlyTextArea";
+import TextArea from "@/components/common/TextArea";
+import ReadOnlyTextArea from "@/components/common/ReadOnlyTextArea";
 import { User } from "@clerk/backend";
 import { ToolType } from "@prisma/client";
 import useDebounce from "@/app/hooks/useDebounce";

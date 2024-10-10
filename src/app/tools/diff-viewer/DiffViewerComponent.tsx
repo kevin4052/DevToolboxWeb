@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import ReactDiffViewer from "react-diff-viewer-continued";
-import TextArea from "@/app/components/common/TextArea";
+import TextArea from "@/components/common/TextArea";
 import { User } from "@clerk/backend";
 import useDebounce from "@/app/hooks/useDebounce";
 import { ToolType } from "@prisma/client";

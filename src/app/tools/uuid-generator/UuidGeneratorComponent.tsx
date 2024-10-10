@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import ReadOnlyTextArea from "@/app/components/common/ReadOnlyTextArea";
+import ReadOnlyTextArea from "@/components/common/ReadOnlyTextArea";
 
 export default function UuidGeneratorComponent() {
 const [uuid, setUuid] = useState(uuidv4());
