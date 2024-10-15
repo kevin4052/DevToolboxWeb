@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { StarIcon } from "@heroicons/react/24/outline";
-import { Separator } from "@/components/ui/separator";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export type ToolOption = {
   name: string;
@@ -100,39 +100,38 @@ export const toolList: ToolOption[] = [
 export default function ToolList() {
   const pathname = usePathname();
   return (
-    <div className="bg-gray-700 flex shrink-0 flex-col">
-      <Separator className="my-2" />
-      <Link
-        className='w-full py-3 px-4 hover:bg-gray-600 hover:rounded-md'
-        href="https://github.com/YourAverageTechBro/DevToolboxWeb"
-        target="_blank"
-        >
-        <div className={"flex items-center gap-2"}>
-          <StarIcon className={"w-6 h-6"} />
-          Star Us On Github
-        </div>
-      </Link>
-      <Separator className="my-2" />
-      {toolList
-        .sort((a, b) => {
-          if (a.name < b.name) return -1;
-          else if (a.name > b.name) return 1;
-          return 0;
-        })
-        .map((toolOption) => (
-          <>
-            <Link
-            className={`w-full py-3 px-4 hover:bg-gray-600 hover:rounded-md ${
-              pathname === toolOption.path && "bg-gray-500 rounded-md"
-              }`}
-              key={toolOption.name}
-              href={toolOption.path}
-              >
-              <p> {toolOption.name}</p>
-            </Link>
-            <Separator className="my-2" />
-          </>
-        ))}
-    </div>
+    <ScrollArea>
+      <div className="bg-gray-700 flex shrink-0 flex-col">
+        <Link
+          className='w-full py-3 px-4 hover:bg-gray-600 hover:rounded-md'
+          href="https://github.com/YourAverageTechBro/DevToolboxWeb"
+          target="_blank"
+          >
+          <div className={"flex items-center gap-2"}>
+            <StarIcon className={"w-6 h-6"} />
+            Star Us On Github
+          </div>
+        </Link>
+        {toolList
+          .sort((a, b) => {
+            if (a.name < b.name) return -1;
+            else if (a.name > b.name) return 1;
+            return 0;
+          })
+          .map((toolOption) => (
+            <>
+              <Link
+              className={`w-full py-3 px-4 hover:bg-gray-600 hover:rounded-md ${
+                pathname === toolOption.path && "bg-gray-500 rounded-md"
+                }`}
+                key={toolOption.name}
+                href={toolOption.path}
+                >
+                <p> {toolOption.name}</p>
+              </Link>
+            </>
+          ))}
+      </div>
+    </ScrollArea>
   );
 }
